@@ -1,0 +1,517 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #fff5f8
+        );
+
+    color: #333;
+
+    overflow-x: hidden;
+}
+
+
+/* SECTIONS */
+
+.screen {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+}
+
+
+/* CARD */
+
+.card {
+    width: 100%;
+    max-width: 600px;
+
+    background: rgba(255,255,255,.92);
+
+    padding: 45px 35px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.12);
+
+    animation: appear .8s ease;
+}
+
+
+/* TEXT */
+
+h1 {
+    color: #ff4f81;
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* BUTTONS */
+
+button {
+    border: none;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.primary {
+    background: #ff4f81;
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(255,79,129,.3);
+}
+
+.secondary {
+    background: #eee;
+
+    color: #555;
+
+    padding: 16px 25px;
+
+    border-radius: 18px;
+
+    font-size: 17px;
+}
+
+
+/* HEARTS */
+
+.small-heart {
+    font-size: 50px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.big-heart {
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* PHOTOS */
+
+.content {
+    width: 100%;
+    max-width: 950px;
+}
+
+.photos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin: 30px 0;
+}
+
+.photos img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    transition:
+        transform .4s;
+}
+
+.photos img:hover {
+    transform:
+        scale(1.04)
+        rotate(1deg);
+}
+
+.story-text {
+    max-width: 600px;
+
+    margin:
+        0 auto 30px;
+}
+
+
+/* QUESTION */
+
+.question-card {
+    position: relative;
+}
+
+.answer-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 70px;
+}
+
+.yes-button {
+    background: #ff4f81;
+
+    color: white;
+
+    padding: 16px 35px;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+}
+
+.no-button {
+    background: #ddd;
+
+    color: #555;
+
+    padding: 16px 35px;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+
+    position: relative;
+
+    transition:
+        left .2s,
+        top .2s;
+}
+
+.real-no {
+    margin-top: 30px;
+
+    background: none;
+
+    color: #999;
+
+    text-decoration: underline;
+
+    font-size: 13px;
+}
+
+
+/* OPTIONS */
+
+.options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.option {
+    min-height: 110px;
+
+    background: white;
+
+    border: 3px solid transparent;
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    font-size: 40px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+}
+
+.option span {
+    display: block;
+
+    font-size: 16px;
+
+    margin-top: 8px;
+}
+
+.option.selected {
+    border-color: #ff4f81;
+
+    transform:
+        scale(1.03);
+}
+
+.continue-button {
+    margin-top: 10px;
+}
+
+
+/* INPUTS */
+
+input {
+    display: block;
+
+    width: 100%;
+
+    max-width: 350px;
+
+    margin: 15px auto 30px;
+
+    padding: 16px;
+
+    border: 2px solid #eee;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #ff4f81;
+}
+
+.time-title {
+    margin-top: 15px;
+}
+
+
+/* SUMMARY */
+
+.summary {
+    background: #fff0f5;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin: 25px 0;
+}
+
+.summary p {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+.surprise {
+    color: #777;
+
+    font-size: 16px;
+}
+
+.confirm-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* HEART ANIMATION */
+
+.heart {
+    position: fixed;
+
+    top: -30px;
+
+    z-index: 999;
+
+    pointer-events: none;
+
+    animation:
+        heartFall linear forwards;
+}
+
+@keyframes heartFall {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* APPEAR */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* HEARTBEAT */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 20px 15px;
+    }
+
+    .card {
+        padding: 30px 20px;
+
+        border-radius: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+
+        max-width: 350px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .option {
+        min-height: 90px;
+    }
+
+    .answer-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .yes-button,
+    .no-button {
+        width: 100%;
+    }
+
+    .confirm-buttons {
+        flex-direction: column;
+    }
+
+    .confirm-buttons button {
+        width: 100%;
+    }
+}

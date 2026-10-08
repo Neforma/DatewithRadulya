@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Для тебя ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- HERO -->
+
+<section class="screen hero">
+
+    <div class="card">
+
+        <div class="small-heart">❤️</div>
+
+        <h1>Привет, Радулечка</h1>
+
+        <p>
+            У меня для тебя есть небольшое предложение...
+        </p>
+
+        <button class="primary" onclick="nextSection('story')">
+            Открыть 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section class="screen" id="story">
+
+    <div class="content">
+
+        <h2>Немного наших приятных моментов ✨</h2>
+
+        <div class="photos">
+
+            <img src="images/photo1.jpg" alt="Фото">
+
+            <img src="images/photo2.jpg" alt="Фото">
+
+            <img src="images/photo3.jpg" alt="Фото">
+
+        </div>
+
+        <p class="story-text">
+            И я подумал, что было бы здорово снова провести
+            один вечер только вдвоём в приятном месте ❤️
+        </p>
+
+        <button class="primary" onclick="nextSection('question')">
+            Дальше →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- QUESTION -->
+
+<section class="screen" id="question">
+
+    <div class="card question-card">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <h2>
+            Пойдёшь со мной<br>
+            на свидание?
+        </h2>
+
+        <p>
+            Обещаю хороший вечер 😉
+        </p>
+
+        <div class="answer-buttons">
+
+            <button
+                class="yes-button"
+                onclick="acceptInvitation()">
+                Да 🥰
+            </button>
+
+            <button
+                class="no-button"
+                id="noButton">
+                Нет 🙈
+            </button>
+
+        </div>
+
+        <button
+            class="real-no"
+            onclick="declineInvitation()">
+            Нет, спасибо
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CHOICE -->
+
+<section class="screen" id="choice">
+
+    <div class="content">
+
+        <h2>Тогда выберем наше приключение ✨</h2>
+
+        <p>
+            Куда тебе хотелось бы пойти?
+        </p>
+
+        <div class="options">
+
+            <button
+                class="option"
+                data-value="Бильярд"
+                onclick="selectOption(this)">
+                🎱
+                <span>Бильярд</span>
+            </button>
+
+            <button
+                class="option"
+                data-value="Вечерняя прогулка"
+                onclick="selectOption(this)">
+                🌆
+                <span>Вечерняя прогулка</span>
+            </button>
+
+            <button
+                class="option"
+                data-value="Ресторан"
+                onclick="selectOption(this)">
+                🍝
+                <span>Ресторан</span>
+            </button>
+
+            <button
+                class="option"
+                data-value="Кино"
+                onclick="selectOption(this)">
+                🎬
+                <span>Кино</span>
+            </button>
+
+            <button
+                class="option"
+                data-value="Караоке"
+                onclick="selectOption(this)">
+                🎤
+                <span>Караоке</span>
+            </button>
+
+        </div>
+
+        <button
+            class="primary continue-button"
+            onclick="goToDate()">
+            Продолжить →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- DATE -->
+
+<section class="screen" id="date">
+
+    <div class="card">
+
+        <h2>Когда? 📅</h2>
+
+        <p>
+            Выбери удобную дату
+        </p>
+
+        <input
+            type="date"
+            id="dateInput">
+
+        <h2 class="time-title">
+            Во сколько? 🕐
+        </h2>
+
+        <input
+            type="time"
+            id="timeInput">
+
+        <button
+            class="primary"
+            onclick="showConfirmation()">
+            Посмотреть приглашение 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CONFIRMATION -->
+
+<section class="screen" id="confirmation">
+
+    <div class="card confirmation-card">
+
+        <div class="big-heart">
+            💌
+        </div>
+
+        <h2>
+            Твоё свидание
+        </h2>
+
+        <div class="summary">
+
+            <p>
+                <strong>Куда:</strong>
+                <span id="summaryActivity"></span>
+            </p>
+
+            <p>
+                <strong>Дата:</strong>
+                <span id="summaryDate"></span>
+            </p>
+
+            <p>
+                <strong>Время:</strong>
+                <span id="summaryTime"></span>
+            </p>
+
+        </div>
+
+        <p class="surprise">
+            <br>
+            Я сам за тобой приеду ❤️
+        </p>
+
+        <div class="confirm-buttons">
+
+            <button
+                class="primary"
+                onclick="sendAnswer()">
+                Всё верно ❤️
+            </button>
+
+            <button
+                class="secondary"
+                onclick="goBackToChoice()">
+                Изменить
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="screen final-screen" id="final">
+
+    <div class="card">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <h1>
+            Договорились!
+        </h1>
+
+        <p>
+            Тогда это официально —
+            у нас свидание 🥰
+        </p>
+
+        <p>
+            До встречи!
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DECLINE -->
+
+<section class="screen" id="declined">
+
+    <div class="card">
+
+        <h1>Хорошо ❤️</h1>
+
+        <p>
+            Спасибо, что честно сказала.
+        </p>
+
+        <p>
+            Никаких обид.
+        </p>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
