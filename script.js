@@ -282,7 +282,7 @@ async function sendAnswer() {
 
         const response =
             await fetch(
-                "https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev",
+                "https:dev-invitation.mysteriouzumaki.workers.dev",
                 {
                     method: "POST",
 
