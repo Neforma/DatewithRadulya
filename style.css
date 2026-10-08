@@ -32,19 +32,15 @@ body {
 
 .screen {
     min-height: 100vh;
-
     display: none;
-
     justify-content: center;
     align-items: center;
-
     padding: 30px 20px;
-
     text-align: center;
 }
 
-.hero {
-    display: flex;
+#hero {
+    display: flex !important;
 }
 
 
