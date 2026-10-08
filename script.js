@@ -1,6 +1,7 @@
 let selectedActivity = null;
 
 function showSection(id) {
+
     document.querySelectorAll(".screen").forEach(section => {
         section.style.display = "none";
     });
@@ -8,7 +9,7 @@ function showSection(id) {
     const section = document.getElementById(id);
 
     if (!section) {
-        console.error("Section not found:", id);
+        console.error("Секция не найдена:", id);
         return;
     }
 
